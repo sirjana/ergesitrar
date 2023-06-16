@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+<header th:replace="fragments/header" :: header></header>>
+<main>
+    <h1>Students</h1>
+
+</main>
+<div>
+    <!--    <form method="post" action="student/register" th:object="${student}">-->
+    <form method="post" action="/student/update" th:object="${student}">
+        <fieldset>
+            <div>
+                <label for="studentNumber">Student No</label>
+            </div>
+
+            <div>
+                <input id="studentNumber" name="studentNumber" type="text" th:value="${student.studentNumber}"/>
+            </div>  <div>
+
+            <input hidden id="studentId" name="studentId" type="text" th:value="${student.studentId}"/>
+        </div>
+
+            <div>
+                <label for="firstName">FirstName</label>
+            </div>
+            <div>
+                <input id ="firstName" name="firstName" type="text" th:value="${student.firstName}"/>
+            </div>
+            <div>
+                <label for="lastName">LastName</label>
+            </div>
+            <div>
+                <input id ="lastName" name="lastName" type="text" th:value="${student.lastName}"/>
+            </div>
+            <div>
+                <label for="cgpa">CGPA</label>
+            </div>
+            <div>
+                <input id ="cgpa" name="cgpa" type="text" th:value="${student.cgpa}"/>
+            </div>
+            <div>
+                <label for="enrollmentDate">enrollmentDate</label>
+            </div>
+            <div>
+                <input id ="enrollmentDate" name="enrollmentDate" type="text" th:value="${student.enrollmentDate}"/>
+            </div>
+            <div>
+                <label for="isInternational">Is International</label>
+            </div>
+            <div>
+                <select name="isInternational" id="isInternational"  th:value="${student.isInternational}">
+                    <option value=""></option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+
+                <div>
+                    <input type="submit" value="Update"/>
+                    <input type="reset" value="Reset"/>
+                </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
